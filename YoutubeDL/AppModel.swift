@@ -93,20 +93,31 @@ class AppModel: ObservableObject {
                 url.absoluteString
             ]
             print(#function, "argv:", argv)
-            
+
             try await yt_dlp(argv: argv) { dict in
                 // For -F we don't really care about hook dicts; just log for debugging
                 print(#function, "hook dict:", dict)
             } log: { level, message in
                 let trimmed = message.trimmingCharacters(in: .whitespacesAndNewlines)
                 print(#function, "yt-dlp [\(level)] \(trimmed)")
-                
-                if !trimmed.isEmpty {
-                    logLines.append(trimmed)
+
+                let cleanedChunk = trimmed
+                    .removingANSIEscapeSequences()
+                    .removingControlCharacters(preserving: "\n\r\t")
+                    .replacingOccurrences(of: "\r", with: "\n")
+
+                let cleanedLines = cleanedChunk
+                    .components(separatedBy: CharacterSet.newlines)
+                    .map { $0.trimmingCharacters(in: .whitespaces) }
+                    .filter { !$0.isEmpty }
+
+                if !cleanedLines.isEmpty {
+                    logLines.append(contentsOf: cleanedLines)
                 }
-                
+
                 if level == "error" {
-                    errorMessage = trimmed
+                    let joined = cleanedLines.joined(separator: " ")
+                    errorMessage = joined.isEmpty ? trimmed : joined
                 }
             } makeTranscodeProgressBlock: {
                 // No transcoding when just listing formats; return a no-op closure
@@ -152,11 +163,14 @@ class AppModel: ObservableObject {
         var results: [FormatChoice] = []
         
         let lines = output.components(separatedBy: .newlines)
-        
+
         for raw in lines {
-            let line = raw.trimmingCharacters(in: .whitespaces)
+            let line = raw
+                .removingANSIEscapeSequences()
+                .removingControlCharacters(preserving: "\n\r\t")
+                .trimmingCharacters(in: .whitespaces)
             if line.isEmpty { continue }
-            
+
             // Skip obvious non-table noise
             if line.hasPrefix("[") { continue }                         // [youtube]..., [info]...
             if line.lowercased().contains("available formats for") {    // header text
@@ -546,5 +560,39 @@ class AppModel: ObservableObject {
     
     func share() {
         // hook up a share sheet later if you want
+    }
+}
+
+// MARK: - ANSI helpers
+
+private extension AppModel {
+    static let ansiEscapeRegex: NSRegularExpression = {
+        // Matches CSI-style ANSI escape sequences that yt-dlp emits when color is enabled
+        let pattern = "\u{001B}\\[[0-9;?]*[ -/]*[@-~]"
+        return try! NSRegularExpression(pattern: pattern, options: [])
+    }()
+}
+
+private extension String {
+    func removingANSIEscapeSequences() -> String {
+        let range = NSRange(startIndex..<endIndex, in: self)
+        return AppModel.ansiEscapeRegex.stringByReplacingMatches(
+            in: self,
+            options: [],
+            range: range,
+            withTemplate: ""
+        )
+    }
+
+    func removingControlCharacters(preserving characters: String = "") -> String {
+        let preservedSet = CharacterSet(charactersIn: characters)
+        return unicodeScalars.compactMap { scalar -> String? in
+            if preservedSet.contains(scalar) {
+                return String(Character(scalar))
+            }
+            return CharacterSet.controlCharacters.contains(scalar)
+                ? nil
+                : String(Character(scalar))
+        }.joined()
     }
 }
