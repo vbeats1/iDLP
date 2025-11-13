@@ -93,20 +93,25 @@ class AppModel: ObservableObject {
                 url.absoluteString
             ]
             print(#function, "argv:", argv)
-            
+
             try await yt_dlp(argv: argv) { dict in
                 // For -F we don't really care about hook dicts; just log for debugging
                 print(#function, "hook dict:", dict)
             } log: { level, message in
                 let trimmed = message.trimmingCharacters(in: .whitespacesAndNewlines)
                 print(#function, "yt-dlp [\(level)] \(trimmed)")
-                
-                if !trimmed.isEmpty {
-                    logLines.append(trimmed)
+
+                let cleaned = trimmed
+                    .removingANSIEscapeSequences()
+                    .removingControlCharacters()
+                    .trimmingCharacters(in: .whitespaces)
+
+                if !cleaned.isEmpty {
+                    logLines.append(cleaned)
                 }
-                
+
                 if level == "error" {
-                    errorMessage = trimmed
+                    errorMessage = cleaned.isEmpty ? trimmed : cleaned
                 }
             } makeTranscodeProgressBlock: {
                 // No transcoding when just listing formats; return a no-op closure
@@ -152,11 +157,14 @@ class AppModel: ObservableObject {
         var results: [FormatChoice] = []
         
         let lines = output.components(separatedBy: .newlines)
-        
+
         for raw in lines {
-            let line = raw.trimmingCharacters(in: .whitespaces)
+            let line = raw
+                .removingANSIEscapeSequences()
+                .removingControlCharacters()
+                .trimmingCharacters(in: .whitespaces)
             if line.isEmpty { continue }
-            
+
             // Skip obvious non-table noise
             if line.hasPrefix("[") { continue }                         // [youtube]..., [info]...
             if line.lowercased().contains("available formats for") {    // header text
@@ -546,5 +554,35 @@ class AppModel: ObservableObject {
     
     func share() {
         // hook up a share sheet later if you want
+    }
+}
+
+// MARK: - ANSI helpers
+
+private extension AppModel {
+    static let ansiEscapeRegex: NSRegularExpression = {
+        // Matches CSI-style ANSI escape sequences that yt-dlp emits when color is enabled
+        let pattern = "\u{001B}\\[[0-9;?]*[ -/]*[@-~]"
+        return try! NSRegularExpression(pattern: pattern, options: [])
+    }()
+}
+
+private extension String {
+    func removingANSIEscapeSequences() -> String {
+        let range = NSRange(startIndex..<endIndex, in: self)
+        return AppModel.ansiEscapeRegex.stringByReplacingMatches(
+            in: self,
+            options: [],
+            range: range,
+            withTemplate: ""
+        )
+    }
+
+    func removingControlCharacters() -> String {
+        unicodeScalars
+            .map { scalar in
+                CharacterSet.controlCharacters.contains(scalar) ? " " : String(scalar)
+            }
+            .joined()
     }
 }
