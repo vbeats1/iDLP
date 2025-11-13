@@ -35,13 +35,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
    
     let model = AppModel()
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        // Ensure Python is fully initialized as early as possible
+        PythonSupport.initialize()
         
         let documentsDirectory: URL
         if #available(iOS 16.0, *) {
             documentsDirectory = URL.documentsDirectory
         } else {
-            documentsDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            documentsDirectory = try! FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
         }
         FileManager.default.changeCurrentDirectoryPath(documentsDirectory.path)
         
@@ -50,7 +59,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let view = NavigationView {
             MainView()
         }
-            .environmentObject(model)
+        .environmentObject(model)
+        
         window?.rootViewController = UIHostingController(rootView: view)
         
         return true
@@ -62,7 +72,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //        }
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             return false
         }
@@ -78,13 +90,18 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.alert)
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
         print(#function, response.actionIdentifier)
-        if response.actionIdentifier == UNNotificationDefaultActionIdentifier && response.notification.request.identifier == NotificationRequestIdentifier.transcode.rawValue {
+        if response.actionIdentifier == UNNotificationDefaultActionIdentifier &&
+            response.notification.request.identifier == NotificationRequestIdentifier.transcode.rawValue {
             DispatchQueue.global(qos: .userInitiated).async {
 //                Downloader.shared.transcode()
             }
