@@ -18,19 +18,20 @@
 
 <div align="center">
 
-![Screenshot 1](https://i.imgur.com/lDl87Oi.png)
-
-![Screenshot 2](https://i.imgur.com/9s4tFgq.png)
-
-![Screenshot 3](https://i.imgur.com/mudA1va.png)
-
-![Screenshot 4](https://i.imgur.com/bAvrxfn.png)
-
-![Screenshot 5](https://i.imgur.com/8jpEU8G.png)
-
-![Screenshot 6](https://i.imgur.com/7YO6XLG.png)
-
-![Screenshot 7](https://i.imgur.com/tvZSH02.png)
+<table>
+  <tr>
+    <td align="center"><img src="https://i.imgur.com/lDl87Oi.png" width="200"/></td>
+    <td align="center"><img src="https://i.imgur.com/9s4tFgq.png" width="200"/></td>
+    <td align="center"><img src="https://i.imgur.com/mudA1va.png" width="200"/></td>
+    <td align="center"><img src="https://i.imgur.com/bAvrxfn.png" width="200"/></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://i.imgur.com/8jpEU8G.png" width="200"/></td>
+    <td align="center"><img src="https://i.imgur.com/7YO6XLG.png" width="200"/></td>
+    <td align="center"><img src="https://i.imgur.com/tvZSH02.png" width="200"/></td>
+    <td></td>
+  </tr>
+</table>
 
 </div>
 
