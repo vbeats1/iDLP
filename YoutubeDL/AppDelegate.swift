@@ -27,8 +27,6 @@ import YoutubeDL
 import PythonSupport
 import SwiftUI
 
-let trace = "trace"
-
 @UIApplicationMain
 class AppDelegate: NSObject, UIApplicationDelegate {
     var window: UIWindow?
@@ -56,22 +54,32 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = self
         
+        // Create window using modern iOS 26.0 approach
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            window = UIWindow(windowScene: windowScene)
+        } else {
+            // Fallback for older iOS versions (though you're targeting 26.0)
+            window = UIWindow(frame: UIScreen.main.bounds)
+        }
+        
         let view = NavigationView {
             MainView()
         }
         .environmentObject(model)
         
         window?.rootViewController = UIHostingController(rootView: view)
+        window?.makeKeyAndVisible()
         
         return true
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-//        if Downloader.shared.transcoder != nil {
-//            notify(body: NSLocalizedString("TranscodingStoppedMessage", comment: "Notification body"))
-//        }
+        // Background handling if needed
     }
     
+    // Legacy URL opening handler - deprecated in iOS 26.0
+    // For iOS 13+, this is handled by SceneDelegate
+    @available(iOS, deprecated: 26.0, message: "Use UIScene lifecycle instead")
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -93,19 +101,17 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler(.alert)
+        if #available(iOS 14.0, *) {
+            completionHandler([.banner, .sound])
+        } else {
+            completionHandler(.alert)
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         print(#function, response.actionIdentifier)
-        if response.actionIdentifier == UNNotificationDefaultActionIdentifier &&
-            response.notification.request.identifier == NotificationRequestIdentifier.transcode.rawValue {
-            DispatchQueue.global(qos: .userInitiated).async {
-//                Downloader.shared.transcode()
-            }
-        }
         completionHandler()
     }
 }

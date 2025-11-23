@@ -1,0 +1,183 @@
+2025-11-22 12:19:54 +0000 [MT] Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0xb64038600; archive(resolved)="<IDEArchive: 0xb64727410>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team(resolved)="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	Chain (14, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0xb64038600; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionProcessingPipelineContext: 0xb64038300; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionContext: 0xb647e6580; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionContext: 0xb647e5680; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionContext: 0xb647e5400; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionContext: 0xb647e5180; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionContext: 0xb647e4f00; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionContext: 0xb647e4c80; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionContext: 0xb647e4a00; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="<IDEProvisioningBasicTeam: 0xb668a4840; teamID='2B92AFMSS9', teamName='(null)'>">
+	<IDEDistributionContext: 0xb647e4780; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="(null)">
+	<IDEDistributionContext: 0xb647e4500; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="(null)">
+	<IDEDistributionContext: 0xb647e4280; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="(null)">
+	<IDEDistributionContext: 0xb647e4000; archive = "<IDEArchive: 0xb64727410>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0xb640187c0>", team="(null)">
+	<IDEDistributionContext: 0x10143a730; archive = "<IDEArchive: 0xb64727410>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0xb64038600>
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionCreateDestRootStep
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionCopyItemStep
+2025-11-22 12:19:54 +0000 [MT] Running /usr/bin/ditto '-V' '/Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app' '/var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/Root/Payload/Y.app'
+2025-11-22 12:19:54 +0000  >>> Copying /Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app 
+2025-11-22 12:19:54 +0000  copying file ./_CodeSignature/CodeResources ... 
+2025-11-22 12:19:54 +0000  7165 bytes for ./_CodeSignature/CodeResources
+2025-11-22 12:19:54 +0000  copying file ./Python-iOS_PythonSupport.bundle/lib/python310.zip ... 
+2025-11-22 12:19:54 +0000  4175540 bytes for ./Python-iOS_PythonSupport.bundle/lib/python310.zip
+2025-11-22 12:19:54 +0000  copying file ./Python-iOS_PythonSupport.bundle/lib/python3.10/site-packages/README.txt ... 
+2025-11-22 12:19:54 +0000  119 bytes for ./Python-iOS_PythonSupport.bundle/lib/python3.10/site-packages/README.txt
+2025-11-22 12:19:54 +0000  copying file ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/python-config.py ... 
+2025-11-22 12:19:54 +0000  2101 bytes for ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/python-config.py
+2025-11-22 12:19:54 +0000  copying file ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Makefile ... 
+2025-11-22 12:19:54 +0000  108574 bytes for ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Makefile
+2025-11-22 12:19:54 +0000  copying file ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Setup ... 
+2025-11-22 12:19:54 +0000  15518 bytes for ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Setup
+2025-11-22 12:19:54 +0000  copying file ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/config.c ... 
+2025-11-22 12:19:54 +0000  7228 bytes for ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/config.c
+2025-11-22 12:19:54 +0000  copying file ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Setup.local ... 
+2025-11-22 12:19:54 +0000  3191 bytes for ./Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Setup.local
+2025-11-22 12:19:54 +0000  copying file ./Python-iOS_PythonSupport.bundle/Info.plist ... 
+2025-11-22 12:19:54 +0000  695 bytes for ./Python-iOS_PythonSupport.bundle/Info.plist
+2025-11-22 12:19:54 +0000  copying file ./en.lproj/Localizable.strings ... 
+2025-11-22 12:19:54 +0000  614 bytes for ./en.lproj/Localizable.strings
+2025-11-22 12:19:54 +0000  copying file ./en.lproj/InfoPlist.strings ... 
+2025-11-22 12:19:54 +0000  42 bytes for ./en.lproj/InfoPlist.strings
+2025-11-22 12:19:54 +0000  copying file ./AppIcon60x60@2x.png ... 
+2025-11-22 12:19:54 +0000  11141 bytes for ./AppIcon60x60@2x.png
+2025-11-22 12:19:54 +0000  copying file ./Base.lproj/Main.storyboardc/UIViewController-CY7-H6-nM4.nib ... 
+2025-11-22 12:19:54 +0000  924 bytes for ./Base.lproj/Main.storyboardc/UIViewController-CY7-H6-nM4.nib
+2025-11-22 12:19:54 +0000  copying file ./Base.lproj/Main.storyboardc/CY7-H6-nM4-view-tcl-kl-BfR.nib ... 
+2025-11-22 12:19:54 +0000  1225 bytes for ./Base.lproj/Main.storyboardc/CY7-H6-nM4-view-tcl-kl-BfR.nib
+2025-11-22 12:19:54 +0000  copying file ./Base.lproj/Main.storyboardc/Info.plist ... 
+2025-11-22 12:19:54 +0000  258 bytes for ./Base.lproj/Main.storyboardc/Info.plist
+2025-11-22 12:19:54 +0000  copying file ./Assets.car ... 
+2025-11-22 12:19:54 +0000  3874552 bytes for ./Assets.car
+2025-11-22 12:19:54 +0000  copying file ./AppIcon76x76@2x~ipad.png ... 
+2025-11-22 12:19:54 +0000  21823 bytes for ./AppIcon76x76@2x~ipad.png
+2025-11-22 12:19:54 +0000  copying file ./LaunchScreen.storyboardc/Info.plist ... 
+2025-11-22 12:19:54 +0000  115 bytes for ./LaunchScreen.storyboardc/Info.plist
+2025-11-22 12:19:54 +0000  copying file ./embedded.mobileprovision ... 
+2025-11-22 12:19:54 +0000  14242 bytes for ./embedded.mobileprovision
+2025-11-22 12:19:54 +0000  copying file ./Info.plist ... 
+2025-11-22 12:19:54 +0000  1881 bytes for ./Info.plist
+2025-11-22 12:19:54 +0000  copying file ./PkgInfo ... 
+2025-11-22 12:19:54 +0000  8 bytes for ./PkgInfo
+2025-11-22 12:19:54 +0000  copying file ./Y ... 
+2025-11-22 12:19:54 +0000  32253488 bytes for ./Y
+2025-11-22 12:19:54 +0000 [MT] /usr/bin/ditto exited with 0
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionEmbedProfileStep
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionInfoPlistStep
+2025-11-22 12:19:54 +0000 [MT] Skipping step: IDEDistributionInfoPlistStep because it said so
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionAppThinningPlistStep
+2025-11-22 12:19:54 +0000 [MT] Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionSymbolsStep
+2025-11-22 12:19:54 +0000 [MT] Skipping step: IDEDistributionSymbolsStep because it said so
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionAppThinningStep
+2025-11-22 12:19:54 +0000 [MT] Skipping step: IDEDistributionAppThinningStep because it said so
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionArchThinningStep
+2025-11-22 12:19:54 +0000 [MT] Archs to thin for item /Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app are []
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionODRStep
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionStripXattrsStep
+2025-11-22 12:19:54 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionCodesignStep
+2025-11-22 12:19:54 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb647a2d60; bundleID='yt.dlp.ios.me', path='<DVTFilePath:0xb6475fc60:'/Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb647a2a60; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb661fa940; name='Apple Development: voidmilwaukee@gmail.com (3HD88N6AKK)', hash='D34BE05CD410F2AEE1774AA9EB62980B0BB8E4E4', serialNumber='7F8458A55921CAD58A556DE566A05B35', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-09-20 15:41:29 +0000''>', entitlements='{
+    "application-identifier" = "2B92AFMSS9.yt.dlp.ios.me";
+    "com.apple.developer.team-identifier" = 2B92AFMSS9;
+    "get-task-allow" = 1;
+}', teamID='2B92AFMSS9', identifier='yt.dlp.ios.me', executablePath='<DVTFilePath:0xb647a2580:'/Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app/Y'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "2B92AFMSS9.yt.dlp.ios.me";
+    "com.apple.developer.team-identifier" = 2B92AFMSS9;
+    "get-task-allow" = 1;
+}
+2025-11-22 12:19:54 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2025-11-22 12:19:54 +0000 [MT] Entitlements for <IDEDistributionItem: 0xb647a2d60; bundleID='yt.dlp.ios.me', path='<DVTFilePath:0xb6475fc60:'/Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb647a2a60; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb661fb000; name='Apple Development: voidmilwaukee@gmail.com (3HD88N6AKK)', hash='D34BE05CD410F2AEE1774AA9EB62980B0BB8E4E4', serialNumber='7F8458A55921CAD58A556DE566A05B35', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-09-20 15:41:29 +0000''>', entitlements='{
+    "application-identifier" = "2B92AFMSS9.yt.dlp.ios.me";
+    "com.apple.developer.team-identifier" = 2B92AFMSS9;
+    "get-task-allow" = 1;
+}', teamID='2B92AFMSS9', identifier='yt.dlp.ios.me', executablePath='<DVTFilePath:0xb647a2580:'/Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app/Y'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "2B92AFMSS9.yt.dlp.ios.me";
+    "com.apple.developer.team-identifier" = 2B92AFMSS9;
+    "get-task-allow" = 1;
+}
+2025-11-22 12:19:54 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xb647a2d60; bundleID='yt.dlp.ios.me', path='<DVTFilePath:0xb6475fc60:'/Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xb647a2a60; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xb661fb000; name='Apple Development: voidmilwaukee@gmail.com (3HD88N6AKK)', hash='D34BE05CD410F2AEE1774AA9EB62980B0BB8E4E4', serialNumber='7F8458A55921CAD58A556DE566A05B35', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-09-20 15:41:29 +0000''>', entitlements='{
+    "application-identifier" = "2B92AFMSS9.yt.dlp.ios.me";
+    "com.apple.developer.team-identifier" = 2B92AFMSS9;
+    "get-task-allow" = 1;
+}', teamID='2B92AFMSS9', identifier='yt.dlp.ios.me', executablePath='<DVTFilePath:0xb647a2580:'/Users/macbookair/Documents/YTDLP-iOS26/build/iDLP.xcarchive/Products/Applications/Y.app/Y'>', hardenedRuntime='0'>'> to: /var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/entitlements~~~4TxWnm
+2025-11-22 12:19:54 +0000 [MT] invoking codesign: <NSConcreteTask: 0xb66976c10; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    D34BE05CD410F2AEE1774AA9EB62980B0BB8E4E4,
+    "--entitlements",
+    "/var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/entitlements~~~4TxWnm",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/Root/Payload/Y.app"
+)'>
+2025-11-22 12:19:54 +0000 [MT] codesign output: /var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/Root/Payload/Y.app: replacing existing signature
+/var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/Root/Payload/Y.app: signed app bundle with Mach-O thin (arm64) [yt.dlp.ios.me]
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionZipODRItemStep
+2025-11-22 12:19:54 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2025-11-22 12:19:54 +0000 [MT] Processing step: IDEDistributionCreateIPAStep
+2025-11-22 12:19:54 +0000 [MT] Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/Root' '/var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/Packages/Y.ipa'
+2025-11-22 12:19:54 +0000  >>> Copying /var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/Root 
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/_CodeSignature/CodeResources ... 
+2025-11-22 12:19:54 +0000  7165 bytes for ./Payload/Y.app/_CodeSignature/CodeResources
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python310.zip ... 
+2025-11-22 12:19:54 +0000  4175540 bytes for ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python310.zip
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/site-packages/README.txt ... 
+119 bytes for ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/site-packages/README.txt
+copying file ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/python-config.py ... 
+2101 bytes for ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/python-config.py
+copying file ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Makefile ... 
+2025-11-22 12:19:54 +0000  108574 bytes for ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Makefile
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Setup ... 
+2025-11-22 12:19:54 +0000  15518 bytes for ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Setup
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/config.c ... 
+2025-11-22 12:19:54 +0000  7228 bytes for ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/config.c
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Setup.local ... 
+2025-11-22 12:19:54 +0000  3191 bytes for ./Payload/Y.app/Python-iOS_PythonSupport.bundle/lib/python3.10/config-3.10-darwin/Setup.local
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Python-iOS_PythonSupport.bundle/Info.plist ... 
+2025-11-22 12:19:54 +0000  695 bytes for ./Payload/Y.app/Python-iOS_PythonSupport.bundle/Info.plist
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/en.lproj/Localizable.strings ... 
+2025-11-22 12:19:54 +0000  614 bytes for ./Payload/Y.app/en.lproj/Localizable.strings
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/en.lproj/InfoPlist.strings ... 
+2025-11-22 12:19:54 +0000  42 bytes for ./Payload/Y.app/en.lproj/InfoPlist.strings
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/AppIcon60x60@2x.png ... 
+2025-11-22 12:19:54 +0000  11141 bytes for ./Payload/Y.app/AppIcon60x60@2x.png
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Base.lproj/Main.storyboardc/UIViewController-CY7-H6-nM4.nib ... 
+2025-11-22 12:19:54 +0000  924 bytes for ./Payload/Y.app/Base.lproj/Main.storyboardc/UIViewController-CY7-H6-nM4.nib
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Base.lproj/Main.storyboardc/CY7-H6-nM4-view-tcl-kl-BfR.nib ... 
+2025-11-22 12:19:54 +0000  1225 bytes for ./Payload/Y.app/Base.lproj/Main.storyboardc/CY7-H6-nM4-view-tcl-kl-BfR.nib
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Base.lproj/Main.storyboardc/Info.plist ... 
+2025-11-22 12:19:54 +0000  258 bytes for ./Payload/Y.app/Base.lproj/Main.storyboardc/Info.plist
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Assets.car ... 
+2025-11-22 12:19:54 +0000  3874552 bytes for ./Payload/Y.app/Assets.car
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/AppIcon76x76@2x~ipad.png ... 
+2025-11-22 12:19:54 +0000  21823 bytes for ./Payload/Y.app/AppIcon76x76@2x~ipad.png
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/LaunchScreen.storyboardc/Info.plist ... 
+2025-11-22 12:19:54 +0000  115 bytes for ./Payload/Y.app/LaunchScreen.storyboardc/Info.plist
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/embedded.mobileprovision ... 
+2025-11-22 12:19:54 +0000  14242 bytes for ./Payload/Y.app/embedded.mobileprovision
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/Info.plist ... 
+2025-11-22 12:19:54 +0000  1881 bytes for ./Payload/Y.app/Info.plist
+2025-11-22 12:19:54 +0000  copying file ./Payload/Y.app/PkgInfo ... 
+2025-11-22 12:19:54 +0000  8 bytes for ./Payload/Y.app/PkgInfo
+copying file ./Payload/Y.app/Y ... 
+2025-11-22 12:19:55 +0000  32253488 bytes for ./Payload/Y.app/Y
+2025-11-22 12:19:55 +0000 [MT] /usr/bin/ditto exited with 0
+2025-11-22 12:19:55 +0000 [MT] Processing step: IDEDistributionAppStoreInformationStep
+2025-11-22 12:19:55 +0000 [MT] Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2025-11-22 12:19:55 +0000 [MT] Processing step: IDEDistributionGenerateProcessedDistributionItems
+2025-11-22 12:19:55 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xb6409d9e0:'/var/folders/25/h670rfdj02q4bwzvkv6cw6kw0000gn/T/XcodeDistPipeline.~~~uy7UDE/Root/Payload/Y.app'>
+2025-11-22 12:19:55 +0000 [MT] Processing step: IDEDistributionCreateManifestStep
